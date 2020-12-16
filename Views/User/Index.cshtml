@@ -1,0 +1,93 @@
+﻿@model IEnumerable<DemoProject.Entities.User>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <h1>Index</h1>
+            <p>
+                <a asp-action="Create">Create New</a>
+            </p>
+        </div>
+        <div class="col-md-6 ">
+            <form asp-action="Index">
+                <input type="text" name="searchString" />
+                <input type="submit" class="btn btn-primary" value="Search"/>
+            </form>
+        </div>
+    </div>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.phone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.level)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.status)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.address)
+            </td>
+            <td>
+                @if(item.level == true)
+                {
+                    <p>Admin</p>
+                }
+                else
+                {
+                    <p>User</p>
+                }
+            </td>
+            <td>
+                @if (item.status == false)
+                {
+                    <a class="btn btn-danger" asp-action="UpdateStatus" asp-controller="User" asp-route-id ="@item.id">Inactive</a>
+                }
+                else
+                {
+                    <a class="btn btn-success" asp-action="UpdateStatus" asp-controller="User" asp-route-id ="@item.id">Active</a>
+                }
+            </td>
+            <td>
+                <a asp-action="Order" asp-controller="User" asp-route-id="@item.id">Orders</a>
+            </td>
+            <td>
+                <a asp-action="Update" asp-route-id="@item.id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

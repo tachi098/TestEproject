@@ -1,0 +1,70 @@
+﻿@model IEnumerable<DemoProject.Entities.Order>
+
+@{
+    ViewData["Title"] = "Order";
+}
+
+<h1>Order</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.phone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.status)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.Count() == 0)
+        {
+            <tr><td colspan="5" style="text-align:center">None Data To Show</td></tr>
+        }
+        else
+        {
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.phone)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.address)
+                    </td>
+                    <td>
+                        @if (item.status == false)
+                        {
+                            <a class="btn btn-secondary" asp-action="UpdateStatus" asp-route-id="@item.id" asp-route-userid ="@item.userid" asp-controller="Order">No Process</a>
+                        }
+                        else
+                        {
+                            <a class="btn btn-success" asp-action="UpdateStatus" asp-route-id="@item.id" asp-route-userid ="@item.userid" asp-controller="Order">Process</a>
+                        }
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.id">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.id">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.id">Delete</a>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
