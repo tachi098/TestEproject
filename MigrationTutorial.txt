@@ -1,0 +1,17 @@
+***HƯỚNG DẪN MIGRATION DATABASE TRONG EF CORE(First Code)*** 
+***Khi Down source về:***
+	update-database 0
+	add-migration initial
+	update-database
+	
+***Khi sửa database:***
+	remove-migration force
+	add-migration initial
+	update-database
+	
+***Fix Lỗi khi down source:***
+	- Lỗi Visual Code:
+		+ upload version: Help -> Check for Update
+	
+	- Lỗi Git:
+		+ xóa init: rm -rf .git

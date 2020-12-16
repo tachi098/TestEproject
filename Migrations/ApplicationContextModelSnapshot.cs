@@ -70,7 +70,67 @@ namespace DemoProject.Migrations
                             phone = "0933691822",
                             status = true,
                             userid = 1
+                        },
+                        new
+                        {
+                            id = 3,
+                            address = "binh thanh",
+                            email = "toilahuy098@gmail.com",
+                            name = "hoai",
+                            phone = "0933691822",
+                            status = true,
+                            userid = 2
+                        },
+                        new
+                        {
+                            id = 4,
+                            address = "binh thanh",
+                            email = "toilahuy098@gmail.com",
+                            name = "hoai",
+                            phone = "0933691822",
+                            status = true,
+                            userid = 2
                         });
+                });
+
+            modelBuilder.Entity("DemoProject.Entities.Orderdetail", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("detail")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("id");
+
+                    b.ToTable("Orderdetail");
+
+                    b.HasData(
+                        new
+                        {
+                            id = 1,
+                            detail = "Nokia"
+                        });
+                });
+
+            modelBuilder.Entity("DemoProject.Entities.Product", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("price")
+                        .HasColumnType("int");
+
+                    b.HasKey("id");
+
+                    b.ToTable("Product");
                 });
 
             modelBuilder.Entity("DemoProject.Entities.User", b =>
@@ -125,28 +185,70 @@ namespace DemoProject.Migrations
                             id = 1,
                             address = "binh thanh",
                             avatar = "image/p1.png",
-                            create_at = new DateTime(2020, 12, 15, 10, 55, 6, 784, DateTimeKind.Local).AddTicks(8878),
+                            create_at = new DateTime(2020, 12, 16, 17, 51, 38, 369, DateTimeKind.Local).AddTicks(3732),
                             email = "toilahuy098@gmail.com",
                             level = true,
                             name = "huy",
                             password = "123456",
                             phone = "0933691822",
                             status = true,
-                            update_at = new DateTime(2020, 12, 15, 10, 55, 6, 785, DateTimeKind.Local).AddTicks(6640)
+                            update_at = new DateTime(2020, 12, 16, 17, 51, 38, 370, DateTimeKind.Local).AddTicks(5268)
                         },
                         new
                         {
                             id = 2,
                             address = "quan 3",
                             avatar = "image/p2.png",
-                            create_at = new DateTime(2020, 12, 15, 10, 55, 6, 785, DateTimeKind.Local).AddTicks(7780),
+                            create_at = new DateTime(2020, 12, 16, 17, 51, 38, 370, DateTimeKind.Local).AddTicks(6678),
                             email = "thaochi098@gmail.com",
                             level = false,
                             name = "chi",
                             password = "123456",
                             phone = "0933691822",
                             status = true,
-                            update_at = new DateTime(2020, 12, 15, 10, 55, 6, 785, DateTimeKind.Local).AddTicks(7797)
+                            update_at = new DateTime(2020, 12, 16, 17, 51, 38, 370, DateTimeKind.Local).AddTicks(6708)
+                        },
+                        new
+                        {
+                            id = 3,
+                            address = "quan 3",
+                            avatar = "image/p2.png",
+                            create_at = new DateTime(2020, 12, 16, 17, 51, 38, 370, DateTimeKind.Local).AddTicks(6732),
+                            email = "hoaixp@gmail.com",
+                            level = false,
+                            name = "hoai",
+                            password = "123456",
+                            phone = "0933691822",
+                            status = true,
+                            update_at = new DateTime(2020, 12, 16, 17, 51, 38, 370, DateTimeKind.Local).AddTicks(6737)
+                        },
+                        new
+                        {
+                            id = 4,
+                            address = "quan 3",
+                            avatar = "image/p2.png",
+                            create_at = new DateTime(2020, 12, 16, 17, 51, 38, 370, DateTimeKind.Local).AddTicks(6743),
+                            email = "lanttm@gmail.com",
+                            level = false,
+                            name = "lan",
+                            password = "123456",
+                            phone = "0933691822",
+                            status = true,
+                            update_at = new DateTime(2020, 12, 16, 17, 51, 38, 370, DateTimeKind.Local).AddTicks(6750)
+                        },
+                        new
+                        {
+                            id = 5,
+                            address = "quan 3",
+                            avatar = "image/p2.png",
+                            create_at = new DateTime(2020, 12, 16, 17, 51, 38, 370, DateTimeKind.Local).AddTicks(6755),
+                            email = "lanttm@gmail.com",
+                            level = false,
+                            name = "lan",
+                            password = "123456",
+                            phone = "0933691822",
+                            status = true,
+                            update_at = new DateTime(2020, 12, 16, 17, 51, 38, 370, DateTimeKind.Local).AddTicks(6757)
                         });
                 });
 
