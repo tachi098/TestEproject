@@ -6,7 +6,7 @@
 # Customize
 bin/
 obj/
-Migration/
+Migrations/
 
 # User-specific files
 *.rsuser
