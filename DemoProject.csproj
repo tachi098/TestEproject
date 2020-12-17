@@ -9,13 +9,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Migrations\20201216103757_Initial.cs" />
-    <Compile Remove="Migrations\20201216103757_Initial.Designer.cs" />
-    <Compile Remove="Migrations\20201216104857_Initial.cs" />
-    <Compile Remove="Migrations\20201216104857_Initial.Designer.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.0">
       <PrivateAssets>all</PrivateAssets>
@@ -30,7 +23,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Migrations\" />
     <Folder Include="wwwroot\image\" />
   </ItemGroup>
 
