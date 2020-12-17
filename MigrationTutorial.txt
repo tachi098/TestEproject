@@ -9,7 +9,7 @@
 	add-migration initial
 	update-database
 	
-***Fix Lỗi khi down source:***
+***Fix Lỗi khi down source:***A
 	- Lỗi Visual Code:
 		+ upload version: Help -> Check for Update
 	
