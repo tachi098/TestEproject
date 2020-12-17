@@ -5,11 +5,12 @@
 	update-database
 	
 ***Khi sửa database:***
+	update-database 0
 	remove-migration force
 	add-migration initial
 	update-database
 	
-***Fix Lỗi khi down source:***A
+***Fix Lỗi khi down source:***H
 	- Lỗi Visual Code:
 		+ upload version: Help -> Check for Update
 	

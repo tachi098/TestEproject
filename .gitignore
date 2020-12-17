@@ -8,6 +8,7 @@ bin/
 obj/
 Migrations/
 
+
 # User-specific files
 *.rsuser
 *.suo
