@@ -18,12 +18,14 @@ namespace DemoProject.Controllers
         }
         public IActionResult Index()
         {
+            // ReSharper disable once Mvc.ViewNotResolved
             return View();
         }
 
         public IActionResult UpdateStatus(int id, int userid)
         {
             services.UpdateStatus(id);
+            // ReSharper disable once Mvc.ActionNotResolved
             return RedirectToAction("Order", new RouteValueDictionary(
             new { controller = "User", action = "Order", Id = userid }));
         }
