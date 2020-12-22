@@ -10,11 +10,11 @@ namespace DemoProject.Controllers
 {
     public class OrderController : Controller
     {
-        private readonly IOrderServices _services;
+        private IOrderServices services;
 
         public OrderController(IOrderServices services)
         {
-            this._services = services;
+            this.services = services;
         }
         public IActionResult Index()
         {
@@ -24,7 +24,7 @@ namespace DemoProject.Controllers
 
         public IActionResult UpdateStatus(int id, int userid)
         {
-            _services.UpdateStatus(id);
+            services.UpdateStatus(id);
             // ReSharper disable once Mvc.ActionNotResolved
             return RedirectToAction("Order", new RouteValueDictionary(
             new { controller = "User", action = "Order", Id = userid }));
